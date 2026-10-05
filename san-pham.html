@@ -4,10 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sản phẩm | Nến thơm</title>
+<meta name="description" content="Các mùi nến thơm: oải hương, vani, trà xanh, hoa hồng, biển xanh, gỗ đàn hương.">
+<meta property="og:title" content="Sản phẩm | Nến thơm">
+<meta property="og:description" content="Các mùi nến thơm: oải hương, vani, trà xanh, hoa hồng, biển xanh, gỗ đàn hương.">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="cursor" aria-hidden="true"></div>
 <header><div class="wrap">
 <a class="logo" href="index.html">Nến thơm</a>
 <nav>
@@ -15,16 +19,24 @@
 <a href="san-pham.html" class="on">Sản phẩm</a>
 <a href="gioi-thieu.html">Giới thiệu</a>
 <a href="lien-he.html">Liên hệ</a>
+<button class="cartbtn" id="cartBtn">Giỏ hàng <b id="cnt">0</b></button>
 </nav></div></header>
 <main class="wrap">
-<div class="page-title"><h1>Sản phẩm</h1><p>Mỗi mùi hương phù hợp một khoảnh khắc khác nhau trong ngày.</p></div>
-<section style="padding-top:16px"><div class="grid">
-<article class="item reveal"><div class="swatch" style="background:#b9a5d6"><div class="mini"></div></div><div class="body"><h3>Oải hương</h3><p>Mùi dịu, hợp để thư giãn trước khi ngủ.</p><span class="price">149.000đ</span></div></article>
-<article class="item reveal"><div class="swatch" style="background:#f0c987"><div class="mini"></div></div><div class="body"><h3>Vani ấm</h3><p>Ngọt nhẹ, tạo cảm giác ấm cúng cho phòng khách.</p><span class="price">159.000đ</span></div></article>
-<article class="item reveal"><div class="swatch" style="background:#a9c2a6"><div class="mini"></div></div><div class="body"><h3>Trà xanh</h3><p>Thanh mát, giúp khử mùi và tỉnh táo khi làm việc.</p><span class="price">149.000đ</span></div></article>
-<article class="item reveal"><div class="swatch" style="background:#e9a7a0"><div class="mini"></div></div><div class="body"><h3>Hoa hồng</h3><p>Hương hoa nhẹ nhàng, hợp làm quà tặng.</p><span class="price">169.000đ</span></div></article>
-<article class="item reveal"><div class="swatch" style="background:#9fc3d1"><div class="mini"></div></div><div class="body"><h3>Biển xanh</h3><p>Hương trong lành, hợp phòng tắm và văn phòng.</p><span class="price">149.000đ</span></div></article>
-<article class="item reveal"><div class="swatch" style="background:#d8b08c"><div class="mini"></div></div><div class="body"><h3>Gỗ đàn hương</h3><p>Trầm ấm, tạo không khí yên tĩnh.</p><span class="price">179.000đ</span></div></article>
+<div class="page-title"><h1>Sản phẩm</h1><p>Chọn nhóm mùi hương, rồi thêm vào giỏ để gửi đơn qua Zalo.</p></div>
+<section style="padding-top:12px">
+<div class="chips" role="group" aria-label="Lọc sản phẩm">
+<button class="chip on" data-f="all">Tất cả</button>
+<button class="chip" data-f="thugian">Thư giãn</button>
+<button class="chip" data-f="tuoimat">Tươi mát</button>
+<button class="chip" data-f="qua">Quà tặng</button>
+</div>
+<div class="grid">
+<article class="item reveal" data-cat="thugian" data-name="Oải hương" data-price="149000" style="--c:#b9a5d6"><div class="swatch"><div class="mini"></div></div><div class="body"><h3>Oải hương</h3><p>Mùi dịu, hợp để thư giãn trước khi ngủ.</p><div class="row"><span class="price">149.000đ</span><button class="add">Thêm vào giỏ</button></div></div></article>
+<article class="item reveal" data-cat="thugian" data-name="Vani ấm" data-price="159000" style="--c:#f0c987"><div class="swatch"><div class="mini"></div></div><div class="body"><h3>Vani ấm</h3><p>Ngọt nhẹ, tạo cảm giác ấm cúng cho phòng khách.</p><div class="row"><span class="price">159.000đ</span><button class="add">Thêm vào giỏ</button></div></div></article>
+<article class="item reveal" data-cat="tuoimat" data-name="Trà xanh" data-price="149000" style="--c:#a9c2a6"><div class="swatch"><div class="mini"></div></div><div class="body"><h3>Trà xanh</h3><p>Thanh mát, giúp khử mùi và tỉnh táo khi làm việc.</p><div class="row"><span class="price">149.000đ</span><button class="add">Thêm vào giỏ</button></div></div></article>
+<article class="item reveal" data-cat="qua" data-name="Hoa hồng" data-price="169000" style="--c:#e9a7a0"><div class="swatch"><div class="mini"></div></div><div class="body"><h3>Hoa hồng</h3><p>Hương hoa nhẹ nhàng, hợp làm quà tặng.</p><div class="row"><span class="price">169.000đ</span><button class="add">Thêm vào giỏ</button></div></div></article>
+<article class="item reveal" data-cat="tuoimat" data-name="Biển xanh" data-price="149000" style="--c:#9fc3d1"><div class="swatch"><div class="mini"></div></div><div class="body"><h3>Biển xanh</h3><p>Hương trong lành, hợp phòng tắm và văn phòng.</p><div class="row"><span class="price">149.000đ</span><button class="add">Thêm vào giỏ</button></div></div></article>
+<article class="item reveal" data-cat="qua" data-name="Gỗ đàn hương" data-price="179000" style="--c:#d8b08c"><div class="swatch"><div class="mini"></div></div><div class="body"><h3>Gỗ đàn hương</h3><p>Trầm ấm, tạo không khí yên tĩnh.</p><div class="row"><span class="price">179.000đ</span><button class="add">Thêm vào giỏ</button></div></div></article>
 </div></section>
 </main>
 <footer>© 2026 Nến thơm. Mọi quyền được bảo lưu.</footer>
